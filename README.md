@@ -16,7 +16,15 @@ STRIPE_SECRET_KEY=sk_test_...
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Replace `/public/tomato.jpg` with your own absurdly premium tomato photo if you like.
+Drop a photo at `/public/tomato.jpg` — the site auto-detects it and falls back to `/public/tomato.svg` if missing.
+
+## Pages
+
+- `/` — buy the tomato
+- `/why` — why it costs £100
+- `/what-you-get` — what you receive
+- `/faq` — frequently asked questions
+- `/100-pound-tomato` — about the experiment
 
 ## Run
 

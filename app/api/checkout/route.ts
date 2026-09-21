@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getSiteUrl, getStripe } from "@/lib/stripe";
+import { getSiteUrl, getTomatoImageUrl } from "@/lib/site";
+import { getStripe } from "@/lib/stripe";
 
 export async function POST() {
   try {
@@ -19,7 +20,7 @@ export async function POST() {
               name: "One Tomato",
               description:
                 "Digital novelty purchase. You receive a digital tomato image after payment.",
-              images: [`${siteUrl}/tomato.svg`],
+              images: [getTomatoImageUrl()],
             },
           },
         },

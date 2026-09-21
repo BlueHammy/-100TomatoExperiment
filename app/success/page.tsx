@@ -1,6 +1,15 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { SiteFooter } from "@/components/SiteFooter";
+import { TomatoImage } from "@/components/TomatoImage";
 import { getStripe } from "@/lib/stripe";
+import { createMetadata } from "@/lib/site";
+
+export const metadata = createMetadata({
+  title: "Congratulations — You Bought a Tomato",
+  description: "You bought one digital tomato for £100. Please enjoy your tomato.",
+  path: "/success",
+});
 
 export default async function SuccessPage({
   searchParams,
@@ -28,33 +37,38 @@ export default async function SuccessPage({
   }
 
   return (
-    <main>
-      <h1>Congratulations.</h1>
+    <div className="page-success">
+      <main>
+        <p className="success-label">Purchase complete</p>
+        <h1>Congratulations.</h1>
 
-      <div className="tomato-hero">
-        {/* Swap /tomato.svg for /tomato.jpg when you have a real photo */}
-        <img src="/tomato.svg" alt="Your tomato" width={560} height={560} />
-      </div>
+        <p className="subtext">You bought a tomato for £100.</p>
 
-      <div className="tomato-emoji" aria-hidden="true">
-        🍅
-      </div>
+        <TomatoImage
+          caption="«Yes, this is the product.»"
+          size="large"
+          alt="Your purchased digital tomato"
+          priority
+        />
 
-      <p className="subtext">You bought a tomato for £100.</p>
-      <p className="subtext">«Please enjoy your tomato.»</p>
+        <p className="subtext subtext--quote">«Please enjoy your tomato.»</p>
 
-      <dl className="receipt">
-        <dt>Tomato: </dt>
-        <dd>1</dd>
-        <dt>Paid: </dt>
-        <dd>£100.00</dd>
-        <dt>Regrets: </dt>
-        <dd>Pending</dd>
-      </dl>
+        <dl className="receipt">
+          <div className="receipt-header">Receipt</div>
+          <dt>Tomato: </dt>
+          <dd>1</dd>
+          <dt>Paid: </dt>
+          <dd>£100.00</dd>
+          <dt>Regrets: </dt>
+          <dd>Pending</dd>
+        </dl>
 
-      <Link className="buy-button" href="/">
-        Buy another tomato
-      </Link>
-    </main>
+        <Link className="buy-button" href="/">
+          Buy another tomato
+        </Link>
+
+        <SiteFooter />
+      </main>
+    </div>
   );
 }

@@ -1,66 +1,41 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
-
-function HomeContent() {
-  const searchParams = useSearchParams();
-  const cancelled = searchParams.get("cancelled") === "true";
-  const [loading, setLoading] = useState(false);
-
-  async function handleBuy() {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/checkout", { method: "POST" });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        alert(data.error ?? "Something went wrong.");
-        setLoading(false);
-      }
-    } catch {
-      alert("Something went wrong.");
-      setLoading(false);
-    }
-  }
-
-  return (
-    <main>
-      {cancelled && (
-        <div className="cancelled-note">
-          Checkout cancelled. The tomato remains unpurchased.
-        </div>
-      )}
-
-      <h1>Buy a tomato for £100</h1>
-      <p className="lead">Yes. A tomato.</p>
-
-      <div className="disclaimer">
-        <p>«Not a tomato plant.</p>
-        <p>Not 100 tomatoes.</p>
-        <p>Not a tomato subscription.</p>
-        <p>One tomato. £100.»</p>
-      </div>
-
-      <button
-        className="buy-button"
-        onClick={handleBuy}
-        disabled={loading}
-        type="button"
-      >
-        {loading ? "One moment…" : "Buy the tomato — £100"}
-      </button>
-
-      <p className="warning">«You have been warned.»</p>
-    </main>
-  );
-}
+import { JsonLd } from "@/components/JsonLd";
+import { SiteFooter } from "@/components/SiteFooter";
+import { TomatoImage } from "@/components/TomatoImage";
+import { CancelledBanner } from "./CancelledBanner";
+import { HomeBuyButton } from "./HomeBuyButton";
+import { getProductSchema } from "@/lib/schema";
 
 export default function HomePage() {
   return (
-    <Suspense>
-      <HomeContent />
-    </Suspense>
+    <>
+      <JsonLd data={getProductSchema()} />
+      <div className="page-home">
+        <main>
+          <CancelledBanner />
+
+          <p className="site-badge">£100 Tomato</p>
+
+          <h1 className="hero-title">
+            Buy a tomato for <span className="price">£100</span>
+          </h1>
+          <p className="lead">Yes. A tomato.</p>
+
+          <TomatoImage caption="«The tomato.»" size="hero" priority />
+
+          <div className="disclaimer">
+            <p>«Not a tomato plant.</p>
+            <p>Not 100 tomatoes.</p>
+            <p>Not a tomato subscription.</p>
+            <p>One tomato. £100.»</p>
+          </div>
+
+          <HomeBuyButton />
+
+          <p className="warning">«You have been warned.»</p>
+
+          <SiteFooter />
+        </main>
+      </div>
+    </>
   );
 }
