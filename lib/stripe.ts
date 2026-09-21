@@ -1,7 +1,9 @@
 import Stripe from "stripe";
 
 export function getStripeSecretKey(): string | undefined {
-  return process.env.STRIPE_SECRET_KEY?.trim();
+  const raw = process.env.STRIPE_SECRET_KEY?.trim();
+  if (!raw) return undefined;
+  return raw.replace(/^["']|["']$/g, "");
 }
 
 export function getStripe() {

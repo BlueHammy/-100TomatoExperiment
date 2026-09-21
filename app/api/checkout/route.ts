@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { getSiteUrl, getTomatoImageUrl } from "@/lib/site";
+import { getSiteUrl } from "@/lib/site";
 import { getStripe, getStripeSecretKey } from "@/lib/stripe";
 
 export async function POST() {
@@ -29,7 +29,6 @@ export async function POST() {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      payment_method_types: ["card"],
       line_items: [
         {
           quantity: 1,
@@ -39,8 +38,7 @@ export async function POST() {
             product_data: {
               name: "One Tomato",
               description:
-                "Digital novelty purchase. You receive a digital tomato image after payment.",
-              images: [getTomatoImageUrl()],
+                "Digital tomato. You receive a digital image after payment.",
             },
           },
         },
@@ -65,6 +63,10 @@ export async function POST() {
         { error: "Stripe rejected the API key. Check it in Vercel and redeploy." },
         { status: 503 }
       );
+    }
+
+    if (err instanceof Stripe.errors.StripeError) {
+      return NextResponse.json({ error: err.message }, { status: 503 });
     }
 
     return NextResponse.json(
