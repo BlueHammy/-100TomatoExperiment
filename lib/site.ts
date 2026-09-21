@@ -10,8 +10,40 @@ export const PRODUCT = {
     "One digital tomato. A novelty purchase — you receive a digital tomato image after payment.",
 } as const;
 
-export function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+function normalizeSiteUrl(url: string): string {
+  return url.replace(/\/$/, "");
+}
+
+function isLocalhostUrl(url: string): boolean {
+  try {
+    const { hostname } = new URL(url);
+    return hostname === "localhost" || hostname === "127.0.0.1";
+  } catch {
+    return false;
+  }
+}
+
+export function getSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL
+    ? normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined;
+
+  // Ignore localhost env on Vercel — common copy-paste from .env.example
+  if (explicit && !(process.env.VERCEL === "1" && isLocalhostUrl(explicit))) {
+    return explicit;
+  }
+
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return normalizeSiteUrl(
+      `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    );
+  }
+
+  if (process.env.VERCEL_URL) {
+    return normalizeSiteUrl(`https://${process.env.VERCEL_URL}`);
+  }
+
+  return explicit ?? "http://localhost:3000";
 }
 
 export function getTomatoImagePath(): string {

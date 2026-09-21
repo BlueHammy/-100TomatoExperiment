@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, DM_Sans } from "next/font/google";
-import { createMetadata } from "@/lib/site";
+import { createMetadata, getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -16,6 +16,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   ...createMetadata({
     title: "Buy a Tomato for £100",
     description: "Buy one digital tomato for £100. Yes, really.",

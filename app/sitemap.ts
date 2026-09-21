@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site";
 
+export const dynamic = "force-dynamic";
+
 const PAGES = [
   { path: "", priority: 1, changeFrequency: "monthly" as const },
   { path: "/why", priority: 0.7, changeFrequency: "yearly" as const },
