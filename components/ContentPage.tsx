@@ -11,7 +11,7 @@ export function ContentPage({ title, children }: ContentPageProps) {
     <div className="content-page">
       <main>
         <p className="content-back">
-          <Link href="/">← Back to the tomato</Link>
+          <Link href="/">← Home</Link>
         </p>
         <h1>{title}</h1>
         <div className="content-body">{children}</div>

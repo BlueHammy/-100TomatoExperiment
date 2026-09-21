@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   ...createMetadata({
     title: "Buy a Tomato for £100",
-    description: "Buy one digital tomato for £100. Yes, really.",
+    description: "Buy one digital tomato for £100.",
     path: "/",
   }),
   verification: {

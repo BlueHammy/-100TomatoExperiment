@@ -86,21 +86,22 @@ a:hover {
 
 .lead {
   font-size: 1.15rem;
-  margin: 0 0 2rem;
+  margin: 0 0 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.01em;
 }
 
-.disclaimer {
+.price-line {
   font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--text-muted);
+  font-size: 1.5rem;
+  color: var(--accent);
   margin: 0 0 2.5rem;
-  line-height: 1.65;
 }
 
-.disclaimer p {
-  margin: 0;
+.fine-print {
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
 }
 
 .buy-button {
@@ -414,11 +415,8 @@ a:hover {
 
 .footer-copy {
   margin: 0;
-  font-family: var(--font-display);
   font-size: 0.78rem;
-  line-height: 1.6;
   color: var(--text-light);
-  font-style: italic;
 }
 
 .content-page .site-footer {

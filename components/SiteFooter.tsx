@@ -14,11 +14,7 @@ export function SiteFooter() {
         </span>
         <Link href="/faq">FAQ</Link>
       </nav>
-      <p className="footer-copy">
-        «© 2026 £100 Tomato
-        <br />
-        A completely unnecessary purchase.»
-      </p>
+      <p className="footer-copy">£100 Tomato © 2026</p>
     </footer>
   );
 }

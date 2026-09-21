@@ -6,8 +6,8 @@ import { getStripe } from "@/lib/stripe";
 import { createMetadata } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Congratulations — You Bought a Tomato",
-  description: "You bought one digital tomato for £100. Please enjoy your tomato.",
+  title: "Thank You — £100 Tomato",
+  description: "You bought one digital tomato for £100.",
   path: "/success",
 });
 
@@ -39,26 +39,24 @@ export default async function SuccessPage({
   return (
     <div className="page-success">
       <main>
-        <p className="success-label">Purchase complete</p>
-        <h1>Congratulations.</h1>
-
-        <p className="subtext">You bought a tomato for £100.</p>
+        <h1>Thank you.</h1>
 
         <TomatoImage
-          caption="«Yes, this is the product.»"
           size="large"
-          alt="Your purchased digital tomato"
+          alt="Your digital tomato"
           priority
         />
 
-        <p className="subtext subtext--quote">«Please enjoy your tomato.»</p>
+        <p className="subtext">You bought a tomato for £100.</p>
 
         <dl className="receipt">
           <div className="receipt-header">Receipt</div>
-          <dt>Tomato: </dt>
-          <dd>1</dd>
-          <dt>Paid: </dt>
+          <dt>Item: </dt>
+          <dd>One tomato</dd>
+          <dt>Price: </dt>
           <dd>£100.00</dd>
+          <dt>Quantity: </dt>
+          <dd>1</dd>
           <dt>Regrets: </dt>
           <dd>Pending</dd>
         </dl>

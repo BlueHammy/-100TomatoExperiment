@@ -29,7 +29,7 @@ export function HomeBuyButton() {
       disabled={loading}
       type="button"
     >
-      {loading ? "One moment…" : "Buy the tomato — £100"}
+      {loading ? "One moment…" : "Buy the tomato"}
     </button>
   );
 }

@@ -12,23 +12,15 @@ export default function HomePage() {
         <main>
           <CancelledBanner />
 
-          <p className="site-badge">£100 Tomato</p>
-
-          <h1 className="hero-title">
-            Buy a tomato for <span className="price">£100</span>
-          </h1>
-          <p className="lead">Yes. A tomato.</p>
-
-          <div className="disclaimer">
-            <p>«Not a tomato plant.</p>
-            <p>Not 100 tomatoes.</p>
-            <p>Not a tomato subscription.</p>
-            <p>One tomato. £100.»</p>
-          </div>
+          <h1 className="hero-title">Buy a tomato for £100</h1>
+          <p className="lead">It&apos;s a tomato.</p>
+          <p className="price-line">£100</p>
 
           <HomeBuyButton />
 
-          <p className="warning">«You have been warned.»</p>
+          <p className="fine-print">
+            Digital tomato. No physical tomato will be sent.
+          </p>
 
           <SiteFooter />
         </main>

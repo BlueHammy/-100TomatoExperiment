@@ -6,8 +6,7 @@ export const PRODUCT = {
   name: "One Tomato",
   price: 100,
   currency: "GBP",
-  description:
-    "One digital tomato. A novelty purchase — you receive a digital tomato image after payment.",
+  description: "One digital tomato. You receive a digital image after payment.",
 } as const;
 
 function normalizeSiteUrl(url: string): string {

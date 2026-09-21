@@ -3,40 +3,27 @@ import Link from "next/link";
 import { createMetadata } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Why Is This Tomato £100?",
-  description:
-    "An explanation of why one digital tomato costs one hundred pounds. Spoiler: that is the entire concept.",
+  title: "Why Is It £100?",
+  description: "Why one digital tomato costs one hundred pounds.",
   path: "/why",
 });
 
 export default function WhyPage() {
   return (
-    <ContentPage title="Why is this tomato £100?">
-      <p>
-        Because that is what it costs. This website sells exactly one thing: a
-        single digital tomato, for exactly one hundred pounds.
-      </p>
-      <p>
-        There is no hidden meaning, no exclusive membership, and no artisanal
-        growing process. The tomato is not hand-reared. It is not rare. It is a
-        tomato.
-      </p>
-      <p>
-        The price is the joke. You are paying £100 for something that cannot be
-        eaten, planted, or displayed on a mantelpiece without printing it
-        yourself. What you receive is a digital tomato image and the quiet
-        knowledge that you chose to do this.
-      </p>
-      <p>
-        If you were hoping for a discount, a bundle deal, or a logical
-        explanation involving supply chains — this is the wrong website.
-      </p>
+    <ContentPage title="Why is it £100?">
+      <p>Because £100 is a lot of money for a picture of a tomato.</p>
+      <p>We thought this was interesting.</p>
+      <p>There is no complex pricing model.</p>
+      <p>There is no premium tier.</p>
+      <p>There is no subscription.</p>
+      <p>It is simply £100.</p>
+
       <p className="content-links">
-        Still curious? Read{" "}
-        <Link href="/what-you-get">what you actually get</Link>, browse the{" "}
-        <Link href="/faq">FAQ</Link>, learn about{" "}
-        <Link href="/100-pound-tomato">the experiment</Link>, or{" "}
-        <Link href="/">buy the tomato</Link>.
+        <Link href="/what-you-get">What you get</Link>
+        {" · "}
+        <Link href="/faq">FAQ</Link>
+        {" · "}
+        <Link href="/">Buy the tomato</Link>
       </p>
     </ContentPage>
   );

@@ -11,7 +11,7 @@ function CancelledBannerInner() {
 
   return (
     <div className="cancelled-note">
-      Checkout cancelled. The tomato remains unpurchased.
+      Checkout cancelled.
     </div>
   );
 }
