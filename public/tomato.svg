@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" role="img" aria-label="A tomato">
+  <defs>
+    <radialGradient id="glow" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff6b5a"/>
+      <stop offset="55%" stop-color="#c62828"/>
+      <stop offset="100%" stop-color="#7f1010"/>
+    </radialGradient>
+    <linearGradient id="stem" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5d8a45"/>
+      <stop offset="100%" stop-color="#3d5c2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="420" fill="#faf8f5"/>
+  <ellipse cx="200" cy="250" rx="130" ry="145" fill="url(#glow)"/>
+  <ellipse cx="155" cy="195" rx="35" ry="50" fill="#ff8a80" opacity="0.35"/>
+  <path d="M200 95 C185 70 215 55 200 35 C195 55 215 70 200 95Z" fill="url(#stem)"/>
+  <path d="M200 95 C170 85 155 105 165 120 C175 100 190 98 200 95Z" fill="#4a7a38"/>
+  <path d="M200 95 C230 85 245 105 235 120 C225 100 210 98 200 95Z" fill="#4a7a38"/>
+</svg>

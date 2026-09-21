@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #faf8f5;
+  color: #1a1a1a;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: normal;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  font-size: 1.125rem;
+  margin: 0 0 2rem;
+  color: #444;
+}
+
+.disclaimer {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+}
+
+.disclaimer p {
+  margin: 0;
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #b83228;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.buy-button:hover {
+  background: #9a2a22;
+}
+
+.buy-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.warning {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+}
+
+.cancelled-note {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  background: #f0ebe4;
+  border-left: 3px solid #b83228;
+  text-align: left;
+}
+
+.tomato-hero {
+  margin: 2rem auto;
+  max-width: 280px;
+}
+
+.tomato-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tomato-emoji {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 1.5rem 0;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: #444;
+  margin: 0.5rem 0 2rem;
+}
+
+.receipt {
+  display: inline-block;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  padding: 1.25rem 1.5rem;
+  margin: 0 auto 2rem;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.receipt dt {
+  display: inline;
+  color: #666;
+}
+
+.receipt dd {
+  display: inline;
+  margin: 0;
+}
+
+.receipt dd::after {
+  content: "";
+  display: block;
+}
+
+.secondary-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #b83228;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.secondary-link:hover {
+  color: #9a2a22;
+}
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+
+  main {
+    padding-top: 2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .tomato-emoji {
+    font-size: 4.5rem;
+  }
+}
