@@ -1,6 +1,5 @@
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
-import { TomatoImage } from "@/components/TomatoImage";
 import { CancelledBanner } from "./CancelledBanner";
 import { HomeBuyButton } from "./HomeBuyButton";
 import { getProductSchema } from "@/lib/schema";
@@ -19,8 +18,6 @@ export default function HomePage() {
             Buy a tomato for <span className="price">£100</span>
           </h1>
           <p className="lead">Yes. A tomato.</p>
-
-          <TomatoImage caption="«The tomato.»" size="hero" priority />
 
           <div className="disclaimer">
             <p>«Not a tomato plant.</p>
