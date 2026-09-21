@@ -15,11 +15,16 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-export const metadata: Metadata = createMetadata({
-  title: "Buy a Tomato for £100",
-  description: "Buy one digital tomato for £100. Yes, really.",
-  path: "/",
-});
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: "Buy a Tomato for £100",
+    description: "Buy one digital tomato for £100. Yes, really.",
+    path: "/",
+  }),
+  verification: {
+    google: "yRL6gq80IGL9KSnaDFsDaW_ZJwQ8soDXMCQ8WTrYTsM",
+  },
+};
 
 export default function RootLayout({
   children,
