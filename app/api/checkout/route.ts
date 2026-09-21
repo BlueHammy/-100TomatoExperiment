@@ -29,6 +29,7 @@ export async function POST() {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      managed_payments: { enabled: false },
       line_items: [
         {
           quantity: 1,
@@ -45,7 +46,7 @@ export async function POST() {
       ],
       success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/?cancelled=true`,
-    });
+    } as Stripe.Checkout.SessionCreateParams);
 
     if (!session.url) {
       return NextResponse.json(
