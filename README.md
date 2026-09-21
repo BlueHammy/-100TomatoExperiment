@@ -38,4 +38,6 @@ Use Stripe test card `4242 4242 4242 4242`, any future expiry, any CVC.
 
 ## Deploy
 
-Set `STRIPE_SECRET_KEY` and `NEXT_PUBLIC_SITE_URL` (your production URL) in your host's environment variables.
+Set `STRIPE_SECRET_KEY` in your host's environment variables.
+
+On Vercel, the site URL is auto-detected for sitemap, canonicals, and Stripe redirects. Optionally set `NEXT_PUBLIC_SITE_URL` to your custom domain — do **not** set it to `localhost` on Vercel.
