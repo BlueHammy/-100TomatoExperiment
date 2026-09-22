@@ -12,11 +12,9 @@ export const metadata = createMetadata({
 export default function WhyPage() {
   return (
     <ContentPage title="Why is this tomato £100?">
-      <p>Because £100 was funnier than £1.</p>
       <p>
         This is a website where you can buy a digital tomato for £100. One
-        tomato. One hundred pounds. It is an experiment involving a tomato that
-        costs £100.
+        tomato. One hundred pounds.
       </p>
       <p>
         There is no complex pricing model. There is no premium tier. There is
