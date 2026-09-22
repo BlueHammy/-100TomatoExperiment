@@ -1,6 +1,7 @@
-import { getTomatoImagePath } from "@/lib/site";
+import { getPaidTomatoImagePath } from "@/lib/site";
 
 type TomatoImageProps = {
+  sessionId: string;
   caption?: string;
   size?: "hero" | "large" | "medium";
   alt?: string;
@@ -8,12 +9,13 @@ type TomatoImageProps = {
 };
 
 export function TomatoImage({
+  sessionId,
   caption,
   size = "hero",
   alt = "One tomato — the product",
   priority = false,
 }: TomatoImageProps) {
-  const src = getTomatoImagePath();
+  const src = getPaidTomatoImagePath(sessionId);
 
   return (
     <figure className={`tomato-figure tomato-figure--${size}`}>

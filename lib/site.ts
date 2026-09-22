@@ -52,13 +52,17 @@ export function getSiteUrl(): string {
   return explicit ?? "http://localhost:3000";
 }
 
+/** Public preview only (OG / schema). The paid photo is not in /public. */
 export function getTomatoImagePath(): string {
-  const jpgPath = path.join(process.cwd(), "public", "tomato.jpg");
-  return fs.existsSync(jpgPath) ? "/tomato.jpg" : "/tomato.svg";
+  return "/tomato.svg";
 }
 
 export function getTomatoImageUrl(): string {
   return `${getSiteUrl()}${getTomatoImagePath()}`;
+}
+
+export function getPaidTomatoImagePath(sessionId: string): string {
+  return `/api/tomato?session_id=${encodeURIComponent(sessionId)}`;
 }
 
 export function createMetadata({

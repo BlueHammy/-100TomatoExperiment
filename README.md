@@ -16,7 +16,7 @@ STRIPE_SECRET_KEY=sk_test_...
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Drop a photo at `/public/tomato.jpg` — the site auto-detects it and falls back to `/public/tomato.svg` if missing.
+Drop the product photo at `/private/tomato.jpg`. It is only served after a verified Stripe payment (not from `/public`).
 
 ## Pages
 

@@ -43,6 +43,7 @@ export default async function SuccessPage({
         <h1>Thank you.</h1>
 
         <TomatoImage
+          sessionId={session_id}
           size="large"
           alt="Your digital tomato"
           priority
