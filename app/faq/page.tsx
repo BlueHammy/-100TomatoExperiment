@@ -3,12 +3,12 @@ import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import { FAQ_ITEMS } from "@/lib/faq";
 import { getFaqSchema } from "@/lib/schema";
-import { createMetadata } from "@/lib/site";
+import { createMetadata, pageTitle } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "FAQ — £100 Tomato",
+  title: pageTitle("FAQ"),
   description:
-    "Frequently asked questions about buying one digital tomato for £100. Is it real? Is it a joke? What do you actually receive?",
+    "Questions about the £100 tomato: price, delivery, refunds, and what you actually receive.",
   path: "/faq",
 });
 

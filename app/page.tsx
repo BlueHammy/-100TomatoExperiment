@@ -13,6 +13,9 @@ export default function HomePage() {
           <CancelledBanner />
 
           <h1 className="hero-title">Buy a tomato for £100</h1>
+          <p className="intro-line">
+            A digital tomato that costs exactly £100.
+          </p>
           <p className="lead">It&apos;s a tomato.</p>
           <p className="price-line">£100</p>
 

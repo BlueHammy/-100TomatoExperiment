@@ -2,12 +2,19 @@ import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
 
+export const SITE_NAME = "The £100 Tomato";
+
 export const PRODUCT = {
   name: "One Tomato",
   price: 100,
   currency: "GBP",
-  description: "One digital tomato. You receive a digital image after payment.",
+  description:
+    "One digital tomato for £100. You receive a digital image after payment.",
 } as const;
+
+export function pageTitle(primary: string): string {
+  return `${primary} | ${SITE_NAME}`;
+}
 
 function normalizeSiteUrl(url: string): string {
   return url.replace(/\/$/, "");
@@ -58,10 +65,12 @@ export function createMetadata({
   title,
   description,
   path = "",
+  index = true,
 }: {
   title: string;
   description: string;
   path?: string;
+  index?: boolean;
 }): Metadata {
   const url = `${getSiteUrl()}${path || "/"}`;
   const image = getTomatoImageUrl();
@@ -78,7 +87,7 @@ export function createMetadata({
       url,
       type: "website",
       locale: "en_GB",
-      siteName: "£100 Tomato",
+      siteName: SITE_NAME,
       images: [{ url: image, alt: "One Tomato" }],
     },
     twitter: {
@@ -88,7 +97,7 @@ export function createMetadata({
       images: [image],
     },
     robots: {
-      index: true,
+      index,
       follow: true,
     },
   };

@@ -6,9 +6,10 @@ import { getStripe } from "@/lib/stripe";
 import { createMetadata } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Thank You — £100 Tomato",
+  title: "Thank You",
   description: "You bought one digital tomato for £100.",
   path: "/success",
+  index: false,
 });
 
 export default async function SuccessPage({

@@ -1,11 +1,11 @@
 import { ContentPage } from "@/components/ContentPage";
 import Link from "next/link";
-import { createMetadata } from "@/lib/site";
+import { createMetadata, pageTitle } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "The £100 Tomato",
+  title: pageTitle("The £100 Tomato Website"),
   description:
-    "A website where you can buy one digital tomato for £100.",
+    "The £100 tomato website: buy one digital tomato for one hundred pounds.",
   path: "/100-pound-tomato",
 });
 
