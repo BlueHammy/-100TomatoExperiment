@@ -24,7 +24,7 @@ Drop a photo at `/public/tomato.jpg` — the site auto-detects it and falls back
 - `/why` — why it costs £100
 - `/what-you-get` — what you receive
 - `/faq` — frequently asked questions
-- `/100-pound-tomato` — about the experiment
+- `/100-pound-tomato` — about the site
 
 ## Run
 
